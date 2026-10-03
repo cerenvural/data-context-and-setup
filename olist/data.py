@@ -20,9 +20,7 @@ class Olist:
         Its keys should be 'sellers', 'orders', 'order_items' etc...
         Its values should be pandas.DataFrames loaded from csv files
         """
-        csv_path = Path("~/.workintech/olist/data/csv").expanduser()
-        data = {}
-
+        csv_path = Path.home() / "workintech" / "data-context-and-setup" / "data" / "csv"
         for path in csv_path.iterdir():
             if path.suffix == ".csv":
                 key = path.stem.removeprefix("olist_").removesuffix("_dataset")
